@@ -1,0 +1,172 @@
+use 5.20.0;
+no strict;
+
+map {
+ /^</ && goto end;
+ $t=$_;
+ $t=~s/.*</</;
+ s/<.*//;
+ s/kie/ќ/g;
+ s/Kie|KIE/Ќ/g;
+ #s/szys/шис/g;
+ #s/Szys/Шис/g;
+ #s/SZYS/ШИС/g;
+ s/szcz/щ/g;
+ s/SZCZ|Szcz/Щ/g;
+ s/ci/чi/g;
+ s/CI/ЧI/g;
+ s/Ci/Чi/g;
+ s/sc/ш/g;
+ s/Sc|SC/Ш/g;
+
+
+
+ s/rz/р̌/g;
+ s/Rz|RZ/Р̌/g;
+ s/dz/д̌/g;
+ s/Dz|DZ/Д̌/g;
+ s/dź/д̌ь/g;
+ s/DŹ/Д̌Ь/g;
+ s/Dź/Д̌ь/g;
+ s/dż/џ/g;
+ s/Dż|DŻ/Џ/g;
+
+#hard	soft	hard	soft
+#a	ia/ja	а	я
+#e	ie/je	э	е
+#y	i	ы	и
+#o	io/jo	о	ë
+
+#ó
+#u	ió/jó
+#iu/ju	        у	ю
+
+#ą	ią/ją	а̨	я̨
+#ę	ię/ję	э̨	е̨
+
+
+ s/ie/є/g;
+ s/Ie|IE/Є/g;
+ s/je/jе/g;
+ s/Jе/Jе/g;
+ s/JE/JЕ/g;
+ s/ja|ia/я/g;
+ s/Ja|Ia|JA|IA/Я/g;
+ s/ją|ią/я̨/g;
+ s/Ją|Ią|JĄ|IĄ/Я̨/g;
+ s/ię|ję/є̨/g;
+
+ s/Ię|Ję|IĘ|JĘ/Є̨/g;
+ s/io|jo/ё/g;
+ s/Io|Jo|IO|JO/Ё/g;
+ s/ji|ii/ї/g;
+ s/Ji|Ii|JI|II/Ї/g;
+ s/ju|iu/ю/g;
+ s/Ju|Iu|JU|IU/Ю/g;
+
+ s/ą/а̨/g;
+ s/Ą/А̨/g;
+ #s/ę/є̨/g;
+ s/ę/е̨/g;
+ s/Ę/Е̨/g;
+
+
+
+ s/cz/ч/g;
+ s/CZ|Cz/Ч/g;
+ s/sz/ш/g;
+ s/SZ|Sz/Ш/g;
+ s/ch/х/g;
+ s/CH|Ch/Х/g;
+
+ s/la/ля/g;
+ s/LA/ЛЯ/g;
+ s/La/Ля/g;
+
+
+
+ s/f/ф/g;
+ s/F/Ф/g;
+ s/p/п/g;
+ s/P/П/g;
+ s/ć/ч/g;
+ s/Ć/Ч/g;
+ s/w/в/g;
+ s/W/В/g;
+ s/y/и/g;
+ s/Y/И/g;
+ s/t/т/g;
+ s/T/Т/g;
+ s/n/н/g;
+ s/N/Н/g;
+ s/m/м/g;
+ s/M/М/g;
+ s/r/р/g;
+ s/R/Р/g;
+ s/g/ґ/g;
+ s/G/Ґ/g;
+ s/l/л/g;
+ s/L/Л/g;
+ s/s/с/g;
+ s/S/С/g;
+ s/ś/ćь/g;
+ s/Ś/Ćь/g;
+ s/u/у/g;
+ s/U/У/g;
+ s/b/б/g;
+ s/B/Б/g;
+ s/c/ц/g;
+ s/C/Ц/g;
+ s/ą/а̨/g;
+ s/Ą/А̨/g;
+ s/i/і/g;
+ s/I/І/g;
+ s/ż/ж/g;
+ s/Ż/Ж/g;
+ s/k/к/g;
+ s/K/К/g;
+ s/z/з/g;
+ s/Z/З/g;
+ s/o/о/g;
+ s/O/О/g;
+ s/d/д/g;
+ s/D/Д/g;
+ #s/e/є/g;
+ s/e/е/g;
+ #s/E/Є/g;
+ s/E/Е/g;
+ s/ł/л̌/g;
+ s/Ł/Л̌/g;
+ s/v/в/g;
+ s/V/В/g;
+ s/h/г/g;
+ s/H/Г/g;
+ s/ń/н́/g;
+ s/Ń/Н́/g;
+ s/ź/з́/g;
+ s/Ź/З́/g;
+ s/a/а/g;
+ s/A/А/gi;
+
+ s/(м|к|п|з|в|т|ц|д|ш)( )/$1ъ$2/g;
+ s/(М|К|П|З|В|Т|Ц|Д|Ш)( )/$1ъ$2/g;
+ s/(м|к|п|з|в|т|ц|д|ш)(\.|,)/$1ъ$2/g;
+ s/(М|К|П|З|В|Т|Ц|Д|Ш)(\.|,)/$1Ъ$2/g;
+ /м$|к$|п$|з$|в$|т$|ц$|д$|ш$/ && s/$/ъ/g;
+ /М$|К$|П$|З$|В$|Т$|Ц$|Д$|Ш$/ && s/$/Ъ/g;
+
+ end:
+ print;
+ !$t && print '>';
+ #/^</ && print '>';
+ #$t && print
+ $t && print"$t>";
+ #$t=~s/><//;
+ #print ' ';
+ #say'>';
+ say'';
+ #say "Tag: $t";
+ $t="";
+}split/>/,"@ARGV";
+#split /<|>/, @ARGV;
+say;
