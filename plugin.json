@@ -1,0 +1,152 @@
+{
+  "version": "2.0.10",
+  "replacements": [
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ż",
+      "repB": "ж",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "Kie|KIE",
+      "repB": "Ќ",
+      "type": "RegEx"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "SZCZ|Szcz",
+      "repB": "Щ",
+      "type": "RegEx"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "rz",
+      "repB": "р̌",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "Rz|RZ",
+      "repB": "Р̌",
+      "type": "RegEx"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ść",
+      "repB": "щ",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ŚĆ",
+      "repB": "Щ",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ó",
+      "repB": "у̊",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ł",
+      "repB": "л̌",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ie",
+      "repB": "є",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "je",
+      "repB": "є",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "n",
+      "repB": "н",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "b",
+      "repB": "б",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "z",
+      "repB": "з",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "g",
+      "repB": "ґ",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "y",
+      "repB": "и",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "w",
+      "repB": "в",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "u",
+      "repB": "у",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "i",
+      "repB": "і",
+      "type": "Simple"
+    },
+    {
+      "active": true,
+      "case": "Maintain",
+      "repA": "ji",
+      "repB": "ї",
+      "type": "Simple"
+    },
+    {
+      "repA": "k",
+      "repB": "к",
+      "type": "Simple",
+      "case": "Maintain",
+      "active": true
+    }
+  ]
+}

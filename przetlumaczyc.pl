@@ -1,6 +1,20 @@
 use 5.20.0;
 no strict;
 
+#say $ARGV[0];
+
+#$ARGV==1 && say "yes" && ($ARGV[0] eq "-f") && ($fname="$ARGV[0]") && say $fname && open(r,<$fname>) || die "Failed to open input file: $!";
+
+open(r,<$ARGV[0]>) || die "\"$ARGV[0]\": $!";
+
+$f="";
+
+map{
+  $f.=$_;
+}<r>;
+
+#say $f;
+
 map {
  /^</ && goto end;
  $t=$_;
@@ -16,8 +30,8 @@ map {
  s/ci/чi/g;
  s/CI/ЧI/g;
  s/Ci/Чi/g;
- s/sc/ш/g;
- s/Sc|SC/Ш/g;
+ s/sc|si/ш/g;
+ s/Sc|SC|Si|SI/Ш/g;
 
 
 
@@ -52,11 +66,15 @@ map {
  s/JE/JЕ/g;
  s/ja|ia/я/g;
  s/Ja|Ia|JA|IA/Я/g;
- s/ją|ią/я̨/g;
- s/Ją|Ią|JĄ|IĄ/Я̨/g;
- s/ię|ję/є̨/g;
+ #s/ją|ią/я̨/g;
+ s/ją|ią/я̌/g;
+ #s/Ją|Ią|JĄ|IĄ/Я̨/g;
+ s/Ją|Ią|JĄ|IĄ/Я̌/g;
+ #s/ię|ję/є̨/g;
+ s/ię|ję/є̌/g;
 
- s/Ię|Ję|IĘ|JĘ/Є̨/g;
+ #s/Ię|Ję|IĘ|JĘ/Є̨/g;
+ s/Ię|Ję|IĘ|JĘ/Є̌/g;
  s/io|jo/ё/g;
  s/Io|Jo|IO|JO/Ё/g;
  s/ji|ii/ї/g;
@@ -64,11 +82,14 @@ map {
  s/ju|iu/ю/g;
  s/Ju|Iu|JU|IU/Ю/g;
 
- s/ą/а̨/g;
- s/Ą/А̨/g;
- #s/ę/є̨/g;
- s/ę/е̨/g;
- s/Ę/Е̨/g;
+ #s/ą/а̨/g;
+ s/ą/а̌/g;
+ #s/Ą/А̨/g;
+ s/Ą/А̌/g;
+ #s/ę/е̨/g;
+ s/ę/е̌/g;
+ #s/Ę/Е̨/g;
+ s/Ę/Е̌/g;
 
 
 
@@ -164,9 +185,9 @@ map {
  #$t=~s/><//;
  #print ' ';
  #say'>';
- say'';
+ #say'';
  #say "Tag: $t";
  $t="";
-}split/>/,"@ARGV";
+}split/>/,"$f";
 #split /<|>/, @ARGV;
 say;
