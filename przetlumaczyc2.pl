@@ -45,7 +45,7 @@ s/Ie/Іє/g;
 s/IE/ІЄ/g;
 
 s/je/ȷ̈/g;
-s/Je|JE/ȷ̈/g;
+s/Je|JE/Ј̈/g;
 
 s/ja/я/g;
 s/Ja|JA/Я/g;
