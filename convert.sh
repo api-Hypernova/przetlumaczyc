@@ -10,7 +10,7 @@ for x in $(cat substitution_nocase.txt); {
 	      \"repA\": \"$first\",
 	      \"repB\": \"$second\",
 	      \"type\": \"Simple\",
-	      \"case\": \"Maintain\",
+              \"case\": \"Maintain\",
 	      \"active\": true
 	},"
 }
